@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/test
+    username: root
+    password: yqxxnaxr1109
+
+mybatis:
+  mapperLocations: classpath*:/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+page:
+  topTitle: トップページ
+  topUrl: /top
+
+board:
+  title:
+    top: TOPページ
+    topUrl: /top
+    main: MAINページ
+    mainUrl: /main

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Search</title>
+</head>
+<body>
+<h2 th:text="${boardConfig.top}"></h2>
+<form role="form" th:action="${boardConfig.mainUrl}" th:object="${TopParam}" method="post">
+    <p>USER NAME</p>
+    <input type="text" id="name" name="name"/>
+    <br />
+    <p>PASSWORD</p>
+    <input type="password" id="password" name="password"/>
+    <button type="submit">実行</button>
+</form><br>
+<div th:if="${errorMsg}">
+    <font color="#C15862">ログインに失敗しました。</font>
+</div>
+</body>
+</html>
