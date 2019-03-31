@@ -2,9 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Search</title>
+    <title>掲示板</title>
 </head>
 <body>
 <h2 th:text="${boardConfig.main}"></h2>
+<br />
+<a href="top">ログイン</a>
+<br />
+<a href="$register">新規登録</a>
+<br />
+<a href="message">投稿</a>
+<br />
+<a href="management">ユーザー管理</a>
+<br />
+<a href="logout">ログアウト</a>
+
 </body>
 </html>

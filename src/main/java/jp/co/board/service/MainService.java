@@ -18,11 +18,11 @@ public class MainService {
     public LoginResult checkPassword(TopParam topParam) throws LoginException {
 
         LoginEntity loginEntity = mainMapper.checkPassword(
-                topParam.getName(),
+                topParam.getUserName(),
                 topParam.getPassword());
 
         if (ObjectUtils.isEmpty(loginEntity)) {
-            throw new LoginException("ログインできません");
+            throw new LoginException("ログインに失敗しました。");
         }
         return LoginResult.create(loginEntity);
     }

@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface MainMapper {
 
-    LoginEntity checkPassword(@Param("name") String userName, @Param("password") String password);
+    LoginEntity checkPassword(@Param("userName") String userName, @Param("Password") String password);
 }

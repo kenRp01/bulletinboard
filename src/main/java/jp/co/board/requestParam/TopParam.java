@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class TopParam {
-    private String name;
-    private String password;
+    private int Id;
+    private String userName;
+    private String Password;
 }

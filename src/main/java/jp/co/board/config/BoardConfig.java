@@ -14,4 +14,13 @@ public class BoardConfig {
     private String topUrl;
     private String main;
     private String mainUrl;
+    private String register;
+    private String registerUrl;
+    private String message;
+    private String messageUrl;
+    private String management;
+    private String managementUrl;
+    private String logout;
+    private String logoutUrl;
+    
 }

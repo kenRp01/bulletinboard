@@ -4,11 +4,12 @@
     <select id="checkPassword" resultType="jp.co.board.db.entity.LoginEntity">
         SELECT
             ID,
-            NAME
+            USERNAME,
+            PASSWORD
         FROM
             USERS
         WHERE
-            NAME = #{name}
-        <!--and PASSWORD = #{password}-->
+            USERNAME = #{userName}
+            AND PASSWORD = #{Password}
     </select>
 </mapper>
