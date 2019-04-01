@@ -2,22 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Search</title>
+    <title>新規登録</title>
 </head>
 <body>
-<h2 th:text="${boardConfig.top}"></h2>
+<h2 th:text="${boardConfig.register}"></h2>
 <div th:if="${errorMsg}">
-    <font color="#C15862">ログインに失敗しました。</font>
+    <font color="#C15862">登録に失敗しました。</font>
 </div>
 <br />
-<form role="form" th:action="${boardConfig.mainUrl}" th:object="${TopParam}" method="post">
+<form role="form" th:action="${boardConfig.registerUrl}" th:object="${RegisterParam}" method="post">
     <p>USER NAME</p>
     <input type="text" id="userName" name="userName"/>
     <br />
     <p>PASSWORD</p>
     <input type="password" id="password" name="password"/>
     <br />
-    <button type="submit">実行</button>
+    <button type="submit">登録</button>
 </form>
 </body>
 </html>
