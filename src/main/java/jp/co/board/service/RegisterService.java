@@ -15,7 +15,7 @@ public class RegisterService {
 
     private final RegisterMapper registerMapper;
 
-    public RegisterResult checkRegister(RegisterParam registerParam throws RegisterException {
+    public RegisterResult checkRegister(RegisterParam registerParam) throws RegisterException {
 
         RegisterEntity registerEntity = (RegisterEntity) registerMapper.checkRegister(
                 registerParam.getUserName(),

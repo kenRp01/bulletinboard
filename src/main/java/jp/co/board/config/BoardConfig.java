@@ -16,6 +16,8 @@ public class BoardConfig {
     private String mainUrl;
     private String register;
     private String registerUrl;
+    private String registerInit;
+    private String registerInitUrl;
     private String message;
     private String messageUrl;
     private String management;

@@ -10,12 +10,14 @@ mybatis:
     mapUnderscoreToCamelCase: true
 
 page:
-  topTitle: トップページ
+  topTitle: ログイン
   topUrl: /top
 
 board:
   title:
-    top: TOPページ
+    top: ログイン
     topUrl: /top
-    main: MAINページ
+    main: 掲示板
     mainUrl: /main
+    register: 新規登録
+    registerUrl: /register
