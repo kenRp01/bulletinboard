@@ -15,6 +15,12 @@ public class RegisterService {
 
     private final RegisterMapper registerMapper;
 
+    //既存ユーザー確認
+    public RegisterEntity checkUsers(RegisterParam registerParam) {
+        RegisterEntity registerEntity = registerMapper.checkUsers(registerParam.getUserName());
+        return registerEntity;
+    }
+
     public RegisterResult checkRegister(RegisterParam registerParam) throws RegisterException {
 
         RegisterEntity registerEntity = (RegisterEntity) registerMapper.checkRegister(
@@ -30,4 +36,5 @@ public class RegisterService {
         }
         return RegisterResult.create(registerEntity);
     }
+
 }

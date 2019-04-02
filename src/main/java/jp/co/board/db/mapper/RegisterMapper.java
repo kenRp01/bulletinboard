@@ -10,4 +10,6 @@ import org.springframework.stereotype.Component;
 public interface RegisterMapper {
 
     RegisterEntity checkRegister(@Param("userName") String userName, @Param("Password") String password);
+    //ユーザー確認
+    RegisterEntity checkUsers(@Param("userName") String userName);
 }

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jp.co.board.db.mapper.RegisterMapper">
-    <select id="checkRegister" resultType="jp.co.board.db.entity.RegisterEntity">
-        SELECT
-        ID,
-        USERNAME,
-        PASSWORD
-        FROM
-        USERS
-        WHERE
-        USERNAME = #{userName}
-        AND PASSWORD = #{Password}
+    <select id="showUsers" resultType="jp.co.board.db.entity.RegisterEntity">
+        SELECT COUNT(*)
+        FROM USERS
+        WHERE USERNAME = #{userName}
     </select>
+    <insert id="checkRegister">
+        INSERT INTO USERS (USERNAME,PASSWORD)
+        VALUE (#{userName},#{Password})
+    </insert>
 </mapper>
