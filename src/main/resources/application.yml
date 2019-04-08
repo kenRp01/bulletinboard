@@ -21,3 +21,11 @@ board:
     mainUrl: /main
     register: 新規登録
     registerUrl: /register
+    registerInit: 新規登録/初期表示
+    registerInitUrl: /registerInit
+    logout: ログアウト
+    logoutUrl: /logout
+    messageInit: 投稿/初期表示
+    messageInitUrl: /messageInit
+    message: 投稿
+    messageUrl: /message

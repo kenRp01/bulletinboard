@@ -20,6 +20,8 @@ public class BoardConfig {
     private String registerInitUrl;
     private String message;
     private String messageUrl;
+    private String messageInit;
+    private String messageInitUrl;
     private String management;
     private String managementUrl;
     private String logout;

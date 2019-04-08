@@ -11,16 +11,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequiredArgsConstructor
-public class RegisterContriller {
+public class RegisterController {
     private final RegisterService registerService;
     private final BoardConfig boardConfig;
 
-    @GetMapping("/register")
+    @PostMapping("/registerInit")
     public String init(Model model, @ModelAttribute TopParam topParam){
 
         model.addAttribute("boardConfig", boardConfig);
@@ -28,7 +29,7 @@ public class RegisterContriller {
         return "/register";
     }
 
-    @PostMapping("/registerInit")
+    @PostMapping("/register")
     public String register(Model model, @ModelAttribute RegisterParam registerParam) throws RegisterException {
 
         model.addAttribute("registerParam", registerParam);
@@ -37,15 +38,12 @@ public class RegisterContriller {
             RegisterEntity users = registerService.checkUsers(registerParam);
 
             if(users == null){
-                try {
-                    //登録
-                    RegisterResult result = registerService.checkRegister(registerParam);
-                    model.addAttribute("registerResult", result);
-                } catch (RegisterException e) {
-                    model.addAttribute("errorMsg", e.getMessage());
-                    return "/register";
-                }
+                //登録
+                registerService.checkRegister(registerParam);
+                return "/top";
+            }else{
+                model.addAttribute("errorMsg","このユーザーは登録できません");
+                return "/register";
             }
-        return "/top";
     }
 }

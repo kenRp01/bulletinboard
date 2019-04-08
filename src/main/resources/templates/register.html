@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>新規登録</title>
+    <br />
+    <form role="form" th:action="${boardConfig.topUrl}" method="POST">
+        <button type="submit">ログイン</button>
+    </form>
+    <form role="form" th:action="${boardConfig.mainUrl}" method="GET">
+        <button type="submit">TOP</button>
+    </form>
 </head>
 <body>
 <h2 th:text="${boardConfig.register}"></h2>
 <div th:if="${errorMsg}">
-    <font color="#C15862">登録に失敗しました。</font>
+    <h2 th:text="${errorMsg}"></h2>
 </div>
 <br />
-<form role="form" th:action="${boardConfig.registerUrl}" th:object="${RegisterParam}" method="post">
+<form role="form" th:action="${boardConfig.registerInitUrl}" th:object="${RegisterParam}" method="post">
     <p>USER NAME</p>
     <input type="text" id="userName" name="userName"/>
     <br />

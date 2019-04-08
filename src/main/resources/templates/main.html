@@ -6,16 +6,24 @@
 </head>
 <body>
 <h2 th:text="${boardConfig.main}"></h2>
+<div th:if="${errorMsg}">
+    <h2 th:text="${errorMsg}"></h2>
+</div>
 <br />
-<a href="top">ログイン</a>
-<br />
-<a href="register" th:object="${TopParam}" methods="POST">新規登録</a>
-<br />
-<a href="message" th:object="${TopParam}">投稿</a>
-<br />
-<a href="management" th:object="${TopParam}">ユーザー管理</a>
-<br />
-<a href="logout" th:object="${TopParam}">ログアウト</a>
-
+<form role="form" th:action="${boardConfig.topUrl}" method="GET">
+    <button type="submit">ログイン</button>
+</form>
+<form role="form" th:action="${boardConfig.registerInitUrl}" method="POST">
+    <button type="submit">新規登録</button>
+</form>
+<form role="form" th:action="${boardConfig.messageInitUrl}" method="POST">
+    <button type="submit">投稿</button>
+</form>
+<form role="form" th:action="${boardConfig.managementInitUrl}" method="POST">
+    <button type="submit">ユーザー管理</button>
+</form>
+<form role="form" th:action="${boardConfig.logoutUrl}" method="POST">
+    <button type="submit">ログアウト</button>
+</form>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>投稿</title>
+</head>
+<body>
+<h2 th:text="${boardConfig.message}"></h2>
+<div th:if="${errorMsg}">
+    <h2 th:text="${errorMsg}"></h2>
+</div>
+<form role="form" th:action="${boardConfig.messageUrl}" method="POST">
+    <p>カテゴリー</p>
+    <input type="text" id="category" name="category">
+    <p>タイトル</p>
+    <input type="text" id="title" name="title">
+    <p>メッセージ</p>
+    <textarea id="message" name="message" />
+    <button type="submit">投稿</button>
+</form>
+</body>
+</html>
