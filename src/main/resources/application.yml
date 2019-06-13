@@ -29,3 +29,5 @@ board:
     messageInitUrl: /messageInit
     message: 投稿
     messageUrl: /message
+    managementInit: ユーザー管理/初期表示
+    management: ユーザー管理

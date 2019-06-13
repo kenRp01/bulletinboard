@@ -29,8 +29,8 @@ public class MessageController {
         model.addAttribute("messageParam",messageParam);
         model.addAttribute("boardConfig",boardConfig);
         //メッサージチェック
-        boolean message = messageService.checkMessage(messageParam);
-        if(message){
+        boolean result = messageService.checkMessage(messageParam);
+        if(result){
             messageService.addmessage(messageParam);
             return "/main";
         }else{

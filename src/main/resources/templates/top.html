@@ -2,9 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Search</title>
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.icon">
+    <link rel="apple-touch-icon" sizes="180×180" href="./apple-touch-icon-180×180.png">
 </head>
 <body>
+<a href="/">
+    <img alt="Bulletin board" src="android-chrome-72x72.png">
+</a>
 <h2 th:text="${boardConfig.top}"></h2>
 <div th:if="${errorMsg}">
     <h2 th:text="${errorMsg}"></h2>
